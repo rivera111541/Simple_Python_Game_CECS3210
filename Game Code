@@ -1,0 +1,47 @@
+def main():
+    #Screen
+    win = GraphWin("Tic Tac Toe by rivera_111541",400,400)
+
+    #Grid
+    for i in range(0,400,135):
+        lineh = Line(Point(0,i), Point(400,i))
+        lineh.draw(win)
+        linev = Line(Point(i,0), Point(i,400))
+        linev.draw(win)
+        
+    #Loop for game
+    for o in range(4):
+        #X
+        p2 = win.getMouse()
+        p3 = win.getMouse()
+        p4 = win.getMouse()
+        p5 = win.getMouse()
+        halfx1 = Line(p2,p3)
+        halfx1.setWidth(2)
+        halfx2 = Line(p4,p5)
+        halfx2.setWidth(2)
+        halfx1.draw(win)
+        halfx2.draw(win)
+        #Circle
+        p1 = win.getMouse()
+        circle = Circle(p1,45)
+        circle.setFill("black")
+        circle.draw(win)
+        
+    #Final x for the game    
+    p2 = win.getMouse()
+    p3 = win.getMouse()
+    p4 = win.getMouse()
+    p5 = win.getMouse()
+    halfx1 = Line(p2,p3)
+    halfx1.setWidth(2)
+    halfx2 = Line(p4,p5)
+    halfx2.setWidth(2)
+    halfx1.draw(win)
+    halfx2.draw(win)
+    
+    #exit window
+    win.getMouse()
+    win.close()
+    
+    main()
